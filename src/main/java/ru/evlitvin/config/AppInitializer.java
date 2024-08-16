@@ -14,8 +14,8 @@ public class AppInitializer implements WebApplicationInitializer {
         ctx.register(WebConfig.class);
         ctx.setServletContext(servletContext);
 
-        ServletRegistration.Dynamic servlet = servletContext.addServlet("dispatcher", new DispatcherServlet(ctx));
+        ServletRegistration.Dynamic servlet = servletContext.addServlet("app", new DispatcherServlet(ctx));
         servlet.setLoadOnStartup(1);
-        servlet.addMapping("/");
+        servlet.addMapping("/app/*");
     }
 }
